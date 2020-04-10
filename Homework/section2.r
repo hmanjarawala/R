@@ -1,5 +1,5 @@
 # Law of Large Number
-n <- 100
+n <- 1000
 counter <- 0
 
 for(i in rnorm(n)){
