@@ -67,7 +67,7 @@ print(df[,2]) # Display data from 2nd Column
 print(df[,'Temprature']) # same as above only referring column by name
 print(df$Temprature) # most sofisticated way
 print(df[['Temprature']]) # least sofisticated way
-print(df[2]) # same as njnjnjnabove only returning data frame instead of vector
+print(df[2]) # same as above only returning data frame instead of vector
 print(df['Temprature']) # same as above only referring column by name
 print(df[c('Weekdays','Temprature')]) # Display data from multiple columns
 # Adding Row to existing data frame
