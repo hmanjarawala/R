@@ -6,8 +6,9 @@ library(dplyr)
 library(corrgram)
 library(corrplot)
 
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
 
-df <- read.csv('~/R Scripts/Files/student-mat.csv', sep = ';')
+df <- read.csv('student-mat.csv', sep = ';')
 #numberic columns only
 num.cols <- sapply(df,is.numeric)
 # filter data

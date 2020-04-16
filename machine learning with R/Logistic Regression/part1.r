@@ -1,5 +1,6 @@
 # LOGISTIC REGRESSION
-df.train <- read.csv('~/R Scripts/Files/titanic_train.csv')
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+df.train <- read.csv('titanic_train.csv')
 print(head(df.train))
 print(str(df.train))
 

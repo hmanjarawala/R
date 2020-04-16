@@ -11,7 +11,8 @@
 # arise when cleaning data.
 
 # Get the Data
-adult <- read.csv('~/R Scripts/Files/adult_sal.csv')
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+adult <- read.csv('adult_sal.csv')
 
 # Check the head of adult
 print(head(adult))

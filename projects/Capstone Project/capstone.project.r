@@ -4,7 +4,8 @@ library(dplyr)
 
 # Use R to open the Batting.csv file and assign it to a dataframe called batting using
 # read.csv
-batting <- read.csv(file = '~/R Scripts/Files/Batting.csv')
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+batting <- read.csv(file = 'Batting.csv')
 
 # Use head() to check out the batting
 #print(head(batting))

@@ -5,7 +5,8 @@ library(data.table)
 # Import the ggplot2 data.table libraries and use fread to load the csv file
 # 'Economist_Assignment_Data.csv' into a dataframe called df
 # (Hint: use drop=1 to skip the first column)
-df <- fread(file = '~/R Scripts/Files/Economist_Assignment_Data.csv', drop=1)
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+df <- fread(file = 'Economist_Assignment_Data.csv', drop=1)
 
 # Check the head of df
 #print(head(df))

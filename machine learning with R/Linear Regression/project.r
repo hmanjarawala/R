@@ -21,7 +21,8 @@ library(ggplot2)
 library(corrgram)
 
 # Read in bikeshare.csv file and set it to a dataframe called bike.
-df <- read.csv(file = '~/R Scripts/Files/bikeshare.csv')
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+df <- read.csv(file = 'bikeshare.csv')
 
 # Check the head of df
 print(head(df))

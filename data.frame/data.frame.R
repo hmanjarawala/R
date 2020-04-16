@@ -4,7 +4,7 @@ stats
 
 #Method 2: Set WD and Read Data
 getwd() #get working directory, i.e. "C:/Users/himanshu.manjarawala/Documents"
-setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Scripts\\R\\Files")
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
 getwd()
 
 rm(stats) # remove stats variable from memory
