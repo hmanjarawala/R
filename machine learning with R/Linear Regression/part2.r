@@ -1,4 +1,5 @@
-df <- read.csv('~/R Scripts/Files/student-mat.csv', sep = ';')
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
+df <- read.csv('student-mat.csv', sep = ';')
 
 # Split data into train and test set
 #install.packages('caTools')
