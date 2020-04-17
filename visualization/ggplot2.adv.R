@@ -115,6 +115,112 @@ t + geom_histogram(binwidth = 10L, aes(x=AudienceRating), fill = "White",
 t + geom_histogram(binwidth = 10L, aes(x=CriticRating), fill = "White", 
                    color = "Blue")
 
-#>>>5
+#----------------Statistical Transformation
 
+u <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color = Genre))
+u + geom_point() + geom_smooth(fill=NA)
 
+#boxplots
+u <- ggplot(data = movies, aes(x=Genre, y=AudienceRating, color = Genre))
+u + geom_boxplot()
+u + geom_boxplot(size=1.2) + geom_point()
+#Trick/Hack
+u + geom_boxplot(size=1.2) + geom_jitter()
+#Another way
+u  + geom_jitter() + geom_boxplot(size=1.2, alpha=0.5)
+
+#>>5
+u <- ggplot(data = movies, aes(x=CriticRating, y=AudienceRating, color = Genre))
+u  + geom_jitter() + geom_boxplot(size=1.2, alpha=0.5)
+
+#----------------Using Factes
+v <- ggplot(data = movies, aes(x=BudgetMillions))
+v + geom_histogram(binwidth = 10, aes(fill = Genre), color='Black')
+
+#Facets
+v + geom_histogram(binwidth = 10, aes(fill = Genre), color='Black') + 
+  facet_grid(Genre~.,scale="free")
+
+#Scatterplots
+w <- ggplot(data = movies, aes(x=CriticRating,y=AudienceRating,color=Genre))
+w + geom_point(size=3)
+
+#Factes
+w + geom_point(size=3) + facet_grid(Genre~.)
+w + geom_point(size=3) + facet_grid(.~Year)
+w + geom_point(size=3) + facet_grid(Genre~Year)
+w + geom_point(size=3) + geom_smooth() + facet_grid(Genre~Year)
+w + geom_point(aes(size=BudgetMillions)) + geom_smooth() + facet_grid(Genre~Year)
+
+#>>>1. will still improve this
+
+#----------------Coordinates
+
+#Today:
+#limits
+#zoom
+
+m <- ggplot(data=movies,aes(x=CriticRating,y=AudienceRating,size=BudgetMillions,color=Genre))
+m + geom_point()
+m + geom_point() + xlim(50,100) + ylim(50,100)
+
+#Won't work always
+
+n <- ggplot(data = movies, aes(x=BudgetMillions))
+n + geom_histogram(binwidth = 10, aes(fill=Genre), color="Black")
+n + geom_histogram(binwidth = 10, aes(fill=Genre), color="Black") + ylim(0,50)
+
+#Instead - zoom:
+n + geom_histogram(binwidth = 10, aes(fill=Genre), color="Black") + 
+  coord_cartesian(ylim = c(0,50))
+
+#Improve #1
+w + geom_point(aes(size=BudgetMillions)) + geom_smooth() + facet_grid(Genre~Year) + 
+  coord_cartesian(ylim = c(0,100))
+
+#---------------- Themes
+
+o <- ggplot(data = movies, aes(x=BudgetMillions))
+h <- o + geom_histogram(binwidth = 10, aes(fill=Genre), color="Black")
+
+#axis Lable
+h + xlab("Money Axis") + ylab("Number Axis")
+
+#label formatting
+h + xlab("Money Axis") + ylab("Number Axis") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=30),
+        axis.title.y=element_text(color="Red",size=30))
+
+#tick mark formatting
+h + xlab("Money Axis") + ylab("Number Axis") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=30),
+        axis.title.y=element_text(color="Red",size=30),
+        axis.text.x=element_text(size=20),
+        axis.text.y=element_text(size=20))
+
+#legend formatting
+h + xlab("Money Axis") + ylab("Number Axis") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=30),
+        axis.title.y=element_text(color="Red",size=30),
+        axis.text.x=element_text(size=20),
+        axis.text.y=element_text(size=20),
+        
+        legend.title=element_text(size=30),
+        legend.text=element_text(size=20),
+        legend.position=c(1,1),
+        legend.justification=c(1,1))
+
+#Title
+h + xlab("Money Axis") + ylab("Number Axis") +
+  ggtitle("Movie Budget Distribution") +
+  theme(axis.title.x=element_text(color="DarkGreen", size=30),
+        axis.title.y=element_text(color="Red",size=30),
+        axis.text.x=element_text(size=20),
+        axis.text.y=element_text(size=20),
+        
+        legend.title=element_text(size=30),
+        legend.text=element_text(size=20),
+        legend.position=c(1,1),
+        legend.justification=c(1,1),
+        
+        plot.title=element_text(color="DarkBlue",size=40,family="Courier"))
