@@ -1,6 +1,6 @@
 
 #Import data from csv file
-setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Scripts\\R\\Files")
+setwd("C:\\Users\\himanshu.manjarawala\\Documents\\R Programming\\R\\Files")
 Fertility <- read.csv(file = 'P2-Section5-Homework-Data.csv')
 head(Fertility)
 
