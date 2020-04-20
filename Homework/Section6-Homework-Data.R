@@ -50,3 +50,8 @@ pl <- pl + theme(
            plot.title = element_text(colour="Black", size=40)
            )
 pl
+
+
+#Final Touch
+pl$labels$size = "Budget $M"
+pl

@@ -242,5 +242,7 @@ myplot(FreeThrowsAttempts/Games)
 #Accuracy for Free Throw
 myplot(FreeThrows/FreeThrowsAttempts)
 
+myplot(FieldGoals/FreeThrowsAttempts)
+
 #Player playing style
-myplot(Points/(FieldGoals - FreeThrows))
+myplot((Points - FreeThrows)/FieldGoals)
